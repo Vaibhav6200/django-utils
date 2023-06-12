@@ -19,12 +19,11 @@ class MessageHandler:
         verification = client.verify.v2.services(self.verify_sid).verifications.create(to=self.phone_number, channel="sms")
         print(verification.status)
 
+# Channels: sms, whatsapp
+
     def verify_message_otp(self, otp):
         client = Client(self.account_sid, self.auth_token)
         verification_check = client.verify.v2.services(self.verify_sid).verification_checks.create(to=self.phone_number, code=otp)
-        print("**********************")
-        print(verification_check.status)
-        print("**********************")
         return verification_check.status
 
 
