@@ -65,6 +65,8 @@ ACCOUNT_USERNAME_REQUIRED  = False
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'        # for development
 LOGIN_REDIRECT_URL = "/"
+SOCIALACCOUNT_LOGIN_ON_GET=True
+
 
 
 if DEBUG == False:
